@@ -1,13 +1,13 @@
 <?php
 function Connect()
 {
- $dbhost = "sql304.byethost10.com";
- $dbuser = "user";
- $dbpass = "password";
- $dbname = "dbName";
+$servername = "localhost";
+$username = "root";
+$password = null;
+$dbname = "Betti";
  
  // Create connection
- $conn = new mysqli($dbhost, $dbuser, $dbpass, $dbname) or die($conn->connect_error);
+ $conn = new mysqli($servername, $username, $password, $dbname) or die($conn->connect_error);
  
  return $conn;
 }

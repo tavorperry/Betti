@@ -1,17 +1,6 @@
+<?php include 'connection.php'; ?>
 <?php
-
-$servername = "localhost";
-$username = "root";
-$password = null;
-$dbname = "Betti";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-
+$conn = Connect();
 
 $createUsers = "CREATE TABLE users (
     id INT(6) NOT NULL AUTO_INCREMENT,
@@ -87,7 +76,7 @@ $createVouchers = "CREATE TABLE vouchers (
     die("Couldn't enter data: ".$conn->error);
   }
 //Thank you msg
-  echo "<p>"."Bets created sucessfuly!"."</p>";
+    echo "<p>"."Bets created sucessfuly!"."</p>";
 
       $success = $conn->query($createVouchers);
   if (!$success) {
@@ -99,6 +88,6 @@ $createVouchers = "CREATE TABLE vouchers (
 
 
 
-//$users = "INSERT into users(firstname,lastname,email,passsword,phone,gender,age) VALUES('" . $f_name . "','" . $l_name . "','" . $email . "','" . $password . "','" . $phone."','" . $gender. "','" . $age . "')";
+//$new_user = "INSERT into users(firstname,lastname,email,passsword,phone,gender,age) VALUES('" . $f_name . "','" . $l_name . "','" . $email . "','" . $password . "','" . $phone."','" . $gender. "','" . $age . "')";
 
 ?>
